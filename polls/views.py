@@ -4,7 +4,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 
 def index(request):
-    latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
+    latest_question_list = Question.objects.all().order_by('-pub_date')[:5] #질문지가 날짜순으로 5개만 보여지게 설정, type은 QuerySet
     context = {'latest_question_list': latest_question_list}
 
     return render(request, 'polls/index.html', context)
